@@ -4,4 +4,11 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(".formWrapper").on("submit", "#imageUpload", function(){
+    var $this = $(this);
+    $(".formWrapper").append('<div class="loader"></div>')
+    setTimeout(function(){console.log('Timer')}, 8000);
+
+  });
+
 });
