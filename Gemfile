@@ -12,7 +12,7 @@ gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 gem 'pry'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'unirest'
 
 gem 'shotgun', '~>0.9.1'
