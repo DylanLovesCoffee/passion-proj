@@ -14,6 +14,7 @@ gem 'rake'
 gem 'pry'
 gem 'dotenv-rails'
 gem 'unirest'
+gem 'fullcontact'
 
 gem 'shotgun', '~>0.9.1'
 

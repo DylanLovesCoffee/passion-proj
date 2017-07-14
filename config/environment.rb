@@ -11,6 +11,7 @@ require 'pry'
 require 'unirest'
 require 'dotenv'
 require 'net/http'
+require 'fullcontact'
 
 require 'uri'
 require 'pathname'

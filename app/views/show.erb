@@ -1,0 +1,27 @@
+<h2><%= @person.contact_info.full_name %></h2>
+<h4>Age: <%= @attributes['age']['value'] %></h4>
+<h4>Gender: <%= @attributes['gender']['value'] %></h4>
+<h4>Race: <%= @attributes['race']['value'] %></h4>
+
+<% if @photos %>
+  <h3>Photos:</h3>
+  <ul>
+    <% @photos.each do |photo_url| %>
+    <li><a href="<%= photo_url %>">Photo <%= @photos.index(photo_url) + 1 %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @person.social_profiles %>
+  <h3>Social Media:</h3>
+  <ul>
+    <% @person.social_profiles.each do |profile| %>
+    <li><a href="<%= profile.url %>"><%= profile.type_name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @person.demographics %>
+  <h3>Location:</h3>
+  <p><%= @person.demographics.location_general %></p>
+<% end %>
