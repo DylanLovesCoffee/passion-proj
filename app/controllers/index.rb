@@ -9,3 +9,7 @@ post '/' do
   @attributes = face_attr(@photos.first)
   erb :'/show'
 end
+
+get '/about' do
+  erb :'/about'
+end
