@@ -8,16 +8,17 @@ def sad?(image_url)
       "Accept" => "application/json"
     }
 
-  # if response.code == 200
+  if response.code == 200
     raw_res = response.raw_body
     response_hash = JSON.parse(raw_res)
-    # binding.pry
     attributes = response_hash['face'].first['attribute']
     if attributes['smiling']['value'] < 50
       return true
     else
       return false
     end
-  # else
-  # end
+  else
+    puts "Oops"
+    return nil
+  end
 end

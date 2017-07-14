@@ -1,14 +1,8 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $(".formWrapper").on("submit", "#imageUpload", function(){
-    var $this = $(this);
     $(".formWrapper").append('<div class="loader"></div>')
-    setTimeout(function(){console.log('Timer')}, 8000);
+    setTimeout(function(){console.log('countdown start')}, 8000);
 
   });
-
 });
