@@ -1,29 +1,36 @@
-<h2><%= @person.contact_info.full_name %></h2>
-<ul>
-  <li>Age: <%= @attributes['age']['value'] %></li>
-  <li>Gender: <%= @attributes['gender']['value'] %></li>
-  <li>Race: <%= @attributes['race']['value'] %></li>
-</ul>
+<div class="container">
+  <% if @person.contact_info %>
+    <h2><%= @person.contact_info.full_name %></h2>
+  <% end %>
 
-<% if @photos %>
-  <h3>Photos:</h3>
-  <ul>
-    <% @photos.each do |photo_url| %>
-    <li><a href="<%= photo_url %>">Photo <%= @photos.index(photo_url) + 1 %></a></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @attributes %>
+    <ul>
+      <li>Estimated Age: <%= @attributes['age']['value'] %></li>
+      <li>Gender: <%= @attributes['gender']['value'] %></li>
+      <li>Estimated Race: <%= @attributes['race']['value'] %></li>
+    </ul>
+  <% end %>
 
-<% if @person.social_profiles %>
-  <h3>Social Media:</h3>
-  <ul>
-    <% @person.social_profiles.each do |profile| %>
-    <li><a href="<%= profile.url %>"><%= profile.type_name %></a></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @photos %>
+    <h3 class="collection-header">Photos:</h3>
+    <ul>
+      <% @photos.each do |photo_url| %>
+      <li><a href="<%= photo_url %>">Photo <%= @photos.index(photo_url) + 1 %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<% if @person.demographics %>
-  <h3>Location:</h3>
-  <p><%= @person.demographics.location_general %></p>
-<% end %>
+  <% if @person.social_profiles %>
+    <h3>Social Media:</h3>
+    <ul>
+      <% @person.social_profiles.each do |profile| %>
+      <li><a href="<%= profile.url %>"><%= profile.type_name %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @person.demographics %>
+    <h3>Location:</h3>
+    <p><%= @person.demographics.location_general %></p>
+  <% end %>
+</div>
