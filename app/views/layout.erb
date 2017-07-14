@@ -12,7 +12,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -22,11 +22,13 @@
 <body>
 
   <!-- Navigation Bar -->
-  <ul id="nav-bar">
-    <li><a class="active" href="/">Home</a></li>
-    <li style="float:right"><a href="/about">About</a></li>
-  </ul>
-
+  <nav>
+    <a href="/" class="brand-logo center">Social Surfer</a>
+    <ul id="nav-bar">
+      <li><a class="active" href="/">Home</a></li>
+      <li style="float:right"><a href="/about">About</a></li>
+    </ul>
+  </nav>
   <%= yield %>
 </body>
 </html>

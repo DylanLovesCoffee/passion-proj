@@ -22,16 +22,25 @@ end
 
 def fullcontact_profile(email)
   # person object is a Hashie and has keys of status, request_id, likelihood, photos, contact_info, organizations, demographics, social_profiles
-  return person = FullContact.person(email: email)
+  person = FullContact.person(email: email)
+  if person
+    person
+  else
+    nil
+  end
 end
 
 def fullcontact_photos(person)
   if person.status == 200
     # Array of photo urls
     photos = []
-    person.photos.each do |info|
-      photos.push(info.url)
+    if person.photos
+      person.photos.each do |info|
+        photos.push(info.url)
+      end
+      return photos
+    else
+      nil
     end
-    return photos
   end
 end
