@@ -6,6 +6,6 @@ post '/' do
   email = params[:email]
   @person = fullcontact_profile(email)
   @photos = fullcontact_photos(@person)
-  # @attributes = face_attr(@photos.first)
+  @attributes = face_attr(@photos.first)
   erb :'/show'
 end
